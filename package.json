@@ -1,1 +1,40 @@
-{     "devDependencies": {         "grunt-csscomb": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-grunt-csscomb",     "homepage": "https://github.com/npmtest/node-npmtest-grunt-csscomb",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-grunt-csscomb.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [grunt-csscomb (v3.1.1)](https://github.com/csscomb/grunt-csscomb)  [![npm package](https://img.shields.io/npm/v/npmtest-grunt-csscomb.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-grunt-csscomb) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-grunt-csscomb.svg)](https://travis-ci.org/npmtest/node-npmtest-grunt-csscomb)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "grunt-csscomb": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-grunt-csscomb",
+    "keywords": [
+        "coverage",
+        "test",
+        "grunt-csscomb"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_grunt_csscomb.js",
+    "name": "npmtest-grunt-csscomb",
+    "nameAlias": "npmtest_grunt_csscomb",
+    "nameOriginal": "npmtest-grunt-csscomb",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-grunt-csscomb.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
